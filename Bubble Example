@@ -1,0 +1,36 @@
+package bubblesort;
+
+public class BubbleSort {
+
+    public static void main(String[] args) {
+        int listaVetor[] = new int[4];
+        listaVetor[0] = 10;
+        listaVetor[1] = 5;
+        listaVetor[2] = 89;
+        listaVetor[3] = 53;
+        bubble(listaVetor);
+    }
+
+    public static void bubble(int[] vetorNumeros) {
+        int numero = vetorNumeros.length;
+
+        while (numero != 0) {
+            int novo = 0;
+            for (int i = 1; i < numero; i++) {
+                if (vetorNumeros[i - 1] > vetorNumeros[i]) {
+                    int auxiliar = vetorNumeros[i];
+                    vetorNumeros[i] = vetorNumeros[i - 1];
+                    vetorNumeros[i - 1] = auxiliar;
+                    novo = 1;
+                }
+            }
+            numero = novo;
+        }
+        
+        for(int teste = 0; teste < vetorNumeros.length; teste++) {
+            System.out.println(vetorNumeros[teste]);
+        }
+            
+    }
+
+}
